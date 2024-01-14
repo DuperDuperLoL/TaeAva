@@ -1,12 +1,15 @@
 #pragma once
+#include "LocalPlayer.hpp"
+#include "Player.hpp"
+#include <unistd.h>
 struct TriggerBot {
     ConfigLoader* cl;
     MyDisplay* display;
     LocalPlayer* localPlayer;
     std::vector<Player*>* players;
     const float TB_MAX_RANGE_ZOOMED = util::metersToGameUnits(250);
-    const float TB_MAX_RANGE_HIPFRE = util::metersToGameUnits(35);
-
+    const float TB_MAX_RANGE_HIPFRE = util::metersToGameUnits(20);
+    bool zoomdelay = false;
     TriggerBot(ConfigLoader* cl, MyDisplay* display, LocalPlayer* localPlayer, std::vector<Player*>* players) {
         this->cl = cl;
         this->display = display;
@@ -37,16 +40,32 @@ struct TriggerBot {
             weaponId != WEAPON_TRIPLE_TAKE &&
             weaponId != WEAPON_THROWING_KNIFE
             )return;
-
+            
+	int delayseconds = 0;
+	if (weaponId == WEAPON_KRABER)
+	   delayseconds = 500000;
+        else if (weaponId == WEAPON_SENTINEL || weaponId == WEAPON_LONGBOW)
+           delayseconds = 400000;
+        else
+           delayseconds = 100000;
+              
         //max range changes based on if we are zoomed in or not
         const float RANGE_MAX = (localPlayer->inZoom) ? TB_MAX_RANGE_ZOOMED : TB_MAX_RANGE_HIPFRE;
-
+	if (localPlayer->inZoom && zoomdelay == false)
+	{
+	 usleep(delayseconds);
+	 zoomdelay = true;
+	}
+	if (!localPlayer->inZoom)
+	zoomdelay = false;
+	
         for (int i = 0; i < players->size(); i++) {
             Player* player = players->at(i);
             if (!player->isCombatReady()) continue;
             if (!player->enemy) continue;
             if (!player->aimedAt) continue;
             if (player->distanceToLocalPlayer <= RANGE_MAX ) {
+            	
                 display->mouseClickLeft();
                 break;
             }
