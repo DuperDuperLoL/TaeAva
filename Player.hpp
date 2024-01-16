@@ -266,7 +266,7 @@ struct Player {
         }
         
         //item Glow
-        for (int highlightId = 30; highlightId < 40; highlightId++) {
+        for (int highlightId = 34; highlightId < 49; highlightId++) {
         const GlowMode newGlowMode = { 137,0,0,127 };
         const GlowMode oldGlowMode = mem::Read<GlowMode>(highlightSettingsPtr + (HIGHLIGHT_TYPE_SIZE * highlightId) + 0);
         if (newGlowMode != oldGlowMode)
