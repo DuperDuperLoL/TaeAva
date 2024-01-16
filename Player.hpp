@@ -252,7 +252,7 @@ struct Player {
             glowColorRGB = { 10, 10, 10 }; // gray shield // cyan 
         } else {
             settingIndex = 70;
-            glowColorRGB = { 5, 10, 5 }; // low health enemies // greeen
+            glowColorRGB = { 1, 10, 1 }; // low health enemies // greeen
         }
         mem::Write<unsigned char>(basePointer + OFF_GLOW_HIGHLIGHT_ID + contextId, settingIndex);
         
