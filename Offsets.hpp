@@ -3,7 +3,7 @@
     #pragma once
     //core
     constexpr long OFF_REGION = 0x140000000;                      //[Static]->Region
-    constexpr long OFF_LEVEL = 0x16d6ac0;                         //[Miscellaneous]->LevelName o
+    constexpr long OFF_LEVEL = 0x16d6ab0;                         //[Miscellaneous]->LevelName o
     constexpr long OFF_LOCAL_PLAYER = 0x21615d8;                  //[Miscellaneous]->LocalPlayer o
     constexpr long OFF_ENTITY_LIST = 0x1db2ed8;                   //[Miscellaneous]->cl_entitylist o
     //buttons
@@ -38,7 +38,7 @@
     constexpr long OFF_CAMERAORIGIN = 0x1e90;                     //[Miscellaneous]->CPlayer!camera_origin o
     constexpr long OFF_MODELNAME = 0x0030;                        //m_ModelName o
      
-    constexpr long OFF_NAMELIST = 0xc451fb0;                      //[Miscellaneous]->NameList o
+    constexpr long OFF_NAMELIST = 0xc5ea050;                      //[Miscellaneous]->NameList o
     constexpr long OFF_YAW = 0x21fc - 0x8;                        //m_currentFramePlayer.m_ammoPoolCount - 0x8 o
     constexpr long OFF_NAMEINDEX = 0x38;                          //nameIndex
     //weapon
@@ -57,4 +57,4 @@
     constexpr long OFF_GLOW_THROUGH_WALL = 0x28c;                 //[DT_HighlightSettings].?
     constexpr long OFF_GLOW_FIX = 0x268;
     constexpr long OFF_GLOW_HIGHLIGHT_ID = 0x28C;                 //[DT_HighlightSettings].m_highlightServerActiveStates
-    constexpr long OFF_GLOW_HIGHLIGHTS = 0xB7A6050;
+    constexpr long OFF_GLOW_HIGHLIGHTS = 0xB93E050;
