@@ -43,11 +43,11 @@ struct TriggerBot {
             
 	int delayseconds = 0;
 	if (weaponId == WEAPON_KRABER)
-	   delayseconds = 500000;
+	   delayseconds = 750000;
         else if (weaponId == WEAPON_SENTINEL || weaponId == WEAPON_LONGBOW)
-           delayseconds = 400000;
+           delayseconds = 500000;
         else
-           delayseconds = 100000;
+           delayseconds = 300000;
               
         //max range changes based on if we are zoomed in or not
         const float RANGE_MAX = (localPlayer->inZoom) ? TB_MAX_RANGE_ZOOMED : TB_MAX_RANGE_HIPFRE;

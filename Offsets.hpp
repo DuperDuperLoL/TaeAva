@@ -53,8 +53,8 @@
     constexpr long OFF_PROJECTILESPEED = 0x04e4;                  //projectile_launch_speed + BASE o
     //glow
     constexpr long HIGHLIGHT_TYPE_SIZE = 0x34;                  
-    constexpr long OFF_GLOW_ENABLE = 0x26c;                       //[DT_HighlightSettings].?
-    constexpr long OFF_GLOW_THROUGH_WALL = 0x28c;                 //[DT_HighlightSettings].?
+    constexpr long OFF_GLOW_ENABLE = 0x288;                       //[DT_HighlightSettings].?
+    constexpr long OFF_GLOW_THROUGH_WALL = 0x26c;                 //[DT_HighlightSettings].?
     constexpr long OFF_GLOW_FIX = 0x268;
     constexpr long OFF_GLOW_HIGHLIGHT_ID = 0x28C;                 //[DT_HighlightSettings].m_highlightServerActiveStates
     constexpr long OFF_GLOW_HIGHLIGHTS = 0xB93E050;

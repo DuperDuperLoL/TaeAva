@@ -1,4 +1,5 @@
 #pragma once
+#include <unistd.h>
 class Random
 {
 private:
@@ -23,7 +24,7 @@ public:
     }
     //==========---------[SUPERGLIDE]-------------==================
     void superGlide(){
-        while (m_display->keyDown(XK_space))
+        while (m_display->keyDown(XK_w))
         {
             static float startjumpTime = 0;
             static bool startSg = false;
@@ -167,6 +168,7 @@ public:
                     for (int i = 0; i < spectatorlist_size; i++)   //show list of spectators by name
                     {   
                         printf("---[%s]---\n", spectatorlist.at(i).c_str());
+                        usleep(5000000);
                     }
                 }
             }              
